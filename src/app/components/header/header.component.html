@@ -23,22 +23,25 @@
           <li class="nav-item">
             <a class="nav-link" routerLinkActive="active" routerLink="/services" aria-current="page" href="/services">Services</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="/movie-list" aria-current="page" href="/movie-list">Movie List</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="/business-contact-list" aria-current="page" href="/business-contact-list">Business Contacts</a>
-          </li>
 
-          <!-- <% if(displayName) { %> -->
-          <li class="nav-item">
-            <a href="/logout" routerLinkActive="active" routerLink="/logout" class="nav-link">Logout</a>
-          </li>
-          <!-- <% } else { %>
-          <li class="nav-item">
-            <a href="/login" class="nav-link">Login</a>
-          </li>
-          <% } %> -->
+
+          <ng-container *ngIf="isLoggedIn else showLoginTemplate">
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" routerLink="/movie-list" aria-current="page" href="/movie-list">Movie List</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" routerLink="/business-contact-list" aria-current="page" href="/business-contact-list">Business Contacts</a>
+            </li>
+            <li class="nav-item">
+              <a href="/logout" routerLinkActive="active" (click)="logout()" routerLink="/logout" class="nav-link">Logout</a>
+            </li>
+          </ng-container>
+          <ng-template #showLoginTemplate>
+            <li class="nav-item">
+              <a href="/login" class="nav-link">Login</a>
+            </li>
+          </ng-template>
+
           
         </ul>
       </div>
