@@ -5,6 +5,9 @@ import { LoginComponent } from './content/auth/login/login.component';
 import { RegisterComponent } from './content/auth/register/register.component';
 import { ContactComponent } from './content/contact/contact.component';
 import { HomeComponent } from './content/home/home.component';
+import { MovieAddComponent } from './content/movies/add/add.component';
+import { MovieEditComponent } from './content/movies/edit/edit.component';
+import { MovieListComponent } from './content/movies/list/list.component';
 import { ProjectsComponent } from './content/projects/projects.component';
 import { ServicesComponent } from './content/services/services.component';
 
@@ -17,6 +20,9 @@ const routes: Routes = [
   {path: 'services', component: ServicesComponent },
   {path: 'login', component: LoginComponent },
   {path: 'register', component: RegisterComponent },
+  {path: 'movie/list', component: MovieListComponent },
+  {path: 'movie/add', component: MovieAddComponent },
+  {path: 'movie/edit/:id', component: MovieEditComponent },
 
 ];
 
